@@ -123,4 +123,5 @@ class Contribution
     {
         return $this->ref_user_id;
     }
+
 }

@@ -1,3 +1,7 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+user:
+    path: /user
+    defaults:   { _controller: AppBundle:Users:AddUser}
