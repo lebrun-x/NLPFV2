@@ -16,7 +16,7 @@ class DefaultController extends Controller
     public function indexhtml()
     {
         // replace this example code with whatever you need
-        return $this->render('index.html');
+        return $this->render('index.html.twig');
     }
 
     /**
@@ -26,7 +26,7 @@ class DefaultController extends Controller
     public function connexionhtml()
     {
         // replace this example code with whatever you need
-        return $this->render('connexion.html');
+        return $this->render('connexion.html.twig');
     }
 
     /**
@@ -36,7 +36,7 @@ class DefaultController extends Controller
     public function besthtml()
     {
         // replace this example code with whatever you need
-        return $this->render('best.html');
+        return $this->render('best.html.twig');
     }
 
     /**
@@ -46,7 +46,7 @@ class DefaultController extends Controller
     public function participatehtml()
     {
         // replace this example code with whatever you need
-        return $this->render('participate.html');
+        return $this->render('participate.html.twig');
     }
 
     /**
@@ -56,7 +56,7 @@ class DefaultController extends Controller
     public function project_detailshtml()
     {
         // replace this example code with whatever you need
-        return $this->render('project_details.html');
+        return $this->render('project_details.html.twig');
     }
 
     /**
@@ -66,7 +66,7 @@ class DefaultController extends Controller
     public function projethtml()
     {
         // replace this example code with whatever you need
-        return $this->render('projet.html');
+        return $this->render('projet.html.twig');
     }
 
     /**
@@ -76,7 +76,7 @@ class DefaultController extends Controller
     public function userhtml()
     {
         // replace this example code with whatever you need
-        return $this->render('user.html');
+        return $this->render('user.html.twig');
     }
 
 

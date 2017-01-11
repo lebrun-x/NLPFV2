@@ -18,7 +18,6 @@ class ConnexionController extends Controller
      */
     public function home()
     {
-        return $this->render('connexion.html');
+        return $this->render('connexion.html.twig');
     }
-
 }
