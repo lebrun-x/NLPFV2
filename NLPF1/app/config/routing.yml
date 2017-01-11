@@ -5,3 +5,7 @@ app:
 user:
     path: /user
     defaults:   { _controller: AppBundle:Users:AddUser}
+
+accueil:
+    path: /index
+    defaults: { _controller: AppBundle:Home:Home}
