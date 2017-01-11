@@ -54,10 +54,9 @@
                         {{ form_widget(form.password, {'attr': {'class': 'form_control', 'id' : 'password', 'name' : 'password', 'placeholder' : 'Veuillez rentrez un mot de passe', 'onblur' : 'verifPassword(this)'}}) }}
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary" id="submitUser" disabled='disabled'>Valider votre compte</button>
+                        {{ form_widget(form.save, {'attr': {'class' : 'btn btn-primary', 'disabled' : 'disabled'}}) }}
                     </div>
                 </div>
-            {{ form_rest(form) }}
             {{  form_end(form) }}
         </div>
     </div>

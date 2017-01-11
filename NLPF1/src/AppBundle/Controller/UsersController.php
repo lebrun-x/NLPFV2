@@ -47,7 +47,7 @@ class UsersController extends Controller
 
                 $request->getSession()->getFlashBag()->add('notice', 'Votre compte est bien enregistré.');
 
-                return $this->redirectToRoute('/home', array('id' => $user->getUserId()));
+                return $this->redirectToRoute('accueil', array('id' => $user->getUserId()));
             }
         }
         return $this->render('user2.html.twig', array('form' => $form->createView(),));

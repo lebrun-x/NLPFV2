@@ -69,15 +69,4 @@ class DefaultController extends Controller
         return $this->render('projet.html');
     }
 
-    /**
-     * user.html
-     * @Route("/user")
-     */
-    public function userhtml()
-    {
-        // replace this example code with whatever you need
-        return $this->render('user.html');
-    }
-
-
 }

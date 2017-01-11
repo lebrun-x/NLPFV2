@@ -1,5 +1,4 @@
 $(document).ready(function () {
-		$("#submitUser").click(submitUser);
 	});
 
 	var userName = false;
@@ -24,10 +23,10 @@ $(document).ready(function () {
 		      alert("Veuillez entrer un nom ne dépassant pas les 40 caractères");
 		    switch (champ.id)
 		    {
-		    	case 'name':
+		    	case 'form_name':
 		    		userName = false;
 		    		break;
-	    		case 'firstname':
+	    		case 'form_firstname':
 	    			userFirstname = false;
 	    			break;
 	    		default:
@@ -39,10 +38,10 @@ $(document).ready(function () {
 		      surligne(champ, false);
 		      switch (champ.id)
 			    {
-			    	case 'name':
+			    	case 'form_name':
 			    		userName = true;
 			    		break;
-		    		case 'firstname':
+		    		case 'form_firstname':
 		    			userFirstname = true;
 		    			break;
 		    		default:
@@ -88,12 +87,13 @@ $(document).ready(function () {
 
 	function verifUser()
 	{
+		console.log("Username : " + userName + " userFirstName : " + userFirstname + " password : " + password + " email : " + email )
 		if (userName && userFirstname && password && email)
 		{
-			document.getElementById('submitUser').disabled = '';
+			document.getElementById('form_save').disabled = '';
 		}
 		else
 		{
-			document.getElementById('submitUser').disabled = 'disabled';
+			document.getElementById('form_save').disabled = 'disabled';
 		}
 	}

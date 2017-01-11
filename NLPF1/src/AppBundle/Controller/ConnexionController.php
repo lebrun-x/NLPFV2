@@ -20,5 +20,4 @@ class ConnexionController extends Controller
     {
         return $this->render('connexion.html');
     }
-
 }
