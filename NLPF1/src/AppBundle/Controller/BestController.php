@@ -3,19 +3,18 @@
  * Created by PhpStorm.
  * User: supercanard
  * Date: 08/01/17
- * Time: 08:45
+ * Time: 09:23
  */
 
 namespace AppBundle\Controller;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 
-class HomeController extends Controller
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class BestController extends Controller
 {
- /**
-     * @Route("/home")
+    /**
+     * @Route("/best")
      */
     public function home()
     {
@@ -23,6 +22,6 @@ class HomeController extends Controller
 
         $projects = $repository->findAll();
 
-        return $this->render('index.html.twig', array("projects" => $projects));
+        return $this->render('best.html.twig', array("projects" => $projects));
     }
 }

@@ -8,7 +8,6 @@
 
         <script src="{{ asset('./js/client/jquery.js') }}"></script>
         <script src="{{ asset('./js/client/utils.js') }}"></script>
-        <script src="{{ asset('./js/client/best.js') }}"></script>
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -33,7 +32,25 @@
 
         <div class="page_title">Accueil</div>
 
-        <div id="projectDisplayBest"></div>
+        <div id="projectDisplayBest">
+            {% for project in projects %}
+                <div class="panel panel-primary">
+                <div class = "panel-heading"> {{ project.name }} </div>
+                <div class = "panel-body">
+                    <img id="imageproject" src= "{{project.image}}" alt="Image"/>
+                    <div class="gain">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Gain: {{project.total_amount}} € / mois
+                    </div>
+                    <div class="contact">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Crée le: 12/01/2017<br/>
+                    </div>
+                    <div class="desctitle"><h4>Description</h4></div>
+                    <div class="description"> {{project.description}} </div>
+                    <button class="btn btn-primary" id="01">Participer</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
 
 	</body>
 

@@ -1,25 +1,10 @@
 $(document).ready(function () {
 
-    var session = {};
-
-    sendMessage("getSession", {});
-
-
-    socket.on("getSession", function (attr) {
-        session = attr;
-        sendMessage("getAllProjectsSorted", {});
-
-        /*** Evenement d'update ***/
-
-        socket.on('needUpdate', function (nothing) {
-            $('#projectDisplayBest').html("");
-
-            sendMessage("getAllProjectsSorted", {});
-        });
-
         /*** Evenement de réception des projets ***/
 
-        socket.on('getProjectSorted', function (project) {
+        getInfo("/best/getAllProject", function (project) {
+
+            printfObject(project);
 
             var project_id = "project" + project["project_id"];
             var node = $("#" + project_id);
@@ -47,6 +32,5 @@ $(document).ready(function () {
                 window.location = './project_details.html';
             });
         });
-    });
 
 });

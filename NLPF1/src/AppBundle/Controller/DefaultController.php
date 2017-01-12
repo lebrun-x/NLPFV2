@@ -15,8 +15,11 @@ class DefaultController extends Controller
      */
     public function indexhtml()
     {
-        // replace this example code with whatever you need
-        return $this->render('index.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Project');
+
+        $projects = $repository->findAll();
+
+        return $this->render('index.html.twig', array("projects" => $projects));
     }
 
     /**
