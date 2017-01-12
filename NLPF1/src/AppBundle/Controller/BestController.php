@@ -18,9 +18,17 @@ class BestController extends Controller
      */
     public function home()
     {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Project');
+        $em = $this->getDoctrine()->getEntityManager();
 
-        $projects = $repository->findAll();
+        $qb = $em->createQueryBuilder();
+
+        $qb->select('p')
+            ->from('AppBundle:Project', 'p')
+            ->orderBy('p.total_amount', 'DESC');
+
+        $query = $qb->getQuery();
+
+        $projects = $query->getArrayResult();
 
         return $this->render('best.html.twig', array("projects" => $projects));
     }

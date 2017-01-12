@@ -8,7 +8,6 @@
 
         <script src="{{ asset('./js/client/jquery.js') }}"></script>
         <script src="{{ asset('./js/client/utils.js') }}"></script>
-        <script src="{{ asset('./js/client/project_details.js') }}"></script>
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -28,8 +27,38 @@
                   <li role="presentation"><a href="/connexion">Se connecter</a></li>
             </ul>
         </nav>
-          <span id="project"></span>
-          <span id="compensations"></span>
+          <span id="project">
+               <div class="panel panel-primary">
+                <div class = "panel-heading"> {{ project.name }} </div>
+                <div class = "panel-body">
+                    <img id="imageproject" src= "{{project.image}}" alt="Image"/>
+                    <div class="gain">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Gain: {{project.total_amount}} € / mois
+                    </div>
+                    <div class="contact">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Crée le: 12/01/2017<br/>
+                    </div>
+                    <div class="desctitle"><h4>Description</h4></div>
+                    <div class="description"> {{project.description}} </div>
+                </div>
+            </div>
+
+          </span>
+          <span id="compensations">
+              {% for compensation in compensations %}
+              <div class="panel panel-primary" id="com">
+                <div class = "panel-heading"> {{compensation.name}} - {{ compensation.amount }} €</div>
+                    <div class = "panel-body">
+                        <dl>
+                          <dt>Description</dt>
+                          <dd> {{ compensation.description }} </dd>
+                        </dl>
+                        <button class="btn btn-primary" onclick="Delete(this)">Supprimer</button>
+                    </div>
+                </div>
+              {% endfor %}
+
+          </span>
         </div>
     </body>
 </html>

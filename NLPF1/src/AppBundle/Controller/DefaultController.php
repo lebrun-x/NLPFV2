@@ -22,15 +22,6 @@ class DefaultController extends Controller
         return $this->render('index.html.twig', array("projects" => $projects));
     }
 
-    /**
-     * connexion.html
-     * @Route("/connexion")
-     */
-    public function connexionhtml()
-    {
-        // replace this example code with whatever you need
-        return $this->render('connexion.html.twig');
-    }
 
     /**
      * best.html
