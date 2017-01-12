@@ -19,7 +19,7 @@
        <nav class="navbar navbar-default">
     <ul class="nav nav-pills">
         <li role="presentation"><a href="index.html">Accueil</a></li>
-        <li role="presentation"><a href="projet.html">Ajouter</a></li>
+        <li role="presentation"><a href="contreparties.html">Ajouter</a></li>
         <li role="presentation"><a href="best.html">Les meilleurs projets</a></li>
         <li role="presentation" class="active"><a href="user.html.twig">S'enregistrer</a></li>
         <li role="presentation"><a href="connexion.html">Se connecter</a></li>
@@ -51,13 +51,12 @@
                 <div class="form-group">
                     <label for="password" class="col-sm-2 control-label">Mot de passe</label>
                     <div class="col-sm-10">
-                        {{ form_widget(form.password, {'attr': {'class': 'form_control', 'id' : 'password', 'name' : 'password', 'placeholder' : 'Veuillez rentrez un mot de passe', 'onblur' : 'verifPassword(this)'}}) }}
+                        {{ form_widget(form.password, {'attr': {'class': 'form_control', 'type' : 'password', 'name' : 'password', 'placeholder' : 'Veuillez rentrez un mot de passe', 'onblur' : 'verifPassword(this)'}}) }}
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary" id="submitUser" disabled='disabled'>Valider votre compte</button>
+                        {{ form_widget(form.save, {'attr': {'class' : 'btn btn-primary', 'disabled' : 'disabled'}}) }}
                     </div>
                 </div>
-            {{ form_rest(form) }}
             {{  form_end(form) }}
         </div>
     </div>

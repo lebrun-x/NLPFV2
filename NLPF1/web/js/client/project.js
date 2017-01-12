@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
 		$("#submitCompensation").click(createCompensation);
-		$("#submitProject").click(submit);
 	});
 
     var index = 1;
@@ -38,7 +37,7 @@ $(document).ready(function () {
 		 verifProject();
 	}
 
-	function submit()
+	/*function submit()
 	{
 		var projectName = $('#projectname').val();
 		var projectDesc = $('#projectdesc').val();
@@ -61,7 +60,7 @@ $(document).ready(function () {
 
 		socket.emit('newProject', myproject);
 		 window.location = './index.html';
-	}
+	}*/
 
 	function submitCompensation()
 	{
@@ -239,12 +238,12 @@ $(document).ready(function () {
 	function verifProject()
 	{
 		console.log(projAuthor, projDesc, projName, projContact, index);
-	   if(projAuthor && projDesc && projName && projImage && projContact && index > 1)
+	   if(projAuthor && projDesc && projName && projContact && index >= 1)
 	   {
-   			document.getElementById('submitProject').disabled = '';
+   			document.getElementById('form_soumettre').disabled = '';
 	   }
 	   else
 	   {
-	    	document.getElementById('submitProject').disabled = 'disabled';  
+	    	document.getElementById('form_soumettre').disabled = 'disabled';
 	   }
 	}

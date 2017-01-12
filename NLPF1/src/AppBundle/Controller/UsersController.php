@@ -11,7 +11,9 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,8 +30,8 @@ class UsersController extends Controller
         $formBuilder
             ->add('name',   TextType::class)
             ->add('firstname', TextType::class)
-            ->add('password',   TextType::class)
-            ->add('email', TextType::class)
+            ->add('password',   PasswordType::class)
+            ->add('email', EmailType::class)
             ->add('save',      SubmitType::class)
         ;
 
@@ -47,7 +49,7 @@ class UsersController extends Controller
 
                 $request->getSession()->getFlashBag()->add('notice', 'Votre compte est bien enregistré.');
 
-                return $this->redirectToRoute('/home', array('id' => $user->getUserId()));
+                return $this->redirectToRoute('accueil', array('id' => $user->getUserId()));
             }
         }
         return $this->render('user2.html.twig', array('form' => $form->createView(),));
