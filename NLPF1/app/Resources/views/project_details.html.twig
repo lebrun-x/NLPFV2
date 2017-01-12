@@ -53,7 +53,7 @@
                           <dt>Description</dt>
                           <dd> {{ compensation.description }} </dd>
                         </dl>
-                        <button class="btn btn-primary" onclick="Delete(this)">Supprimer</button>
+                        <button class="btn btn-primary" onclick="window.location.href='/participate/{{ project.project_id }}/{{ compensation.compensation_id }}'">Participer</button>
                     </div>
                 </div>
               {% endfor %}
