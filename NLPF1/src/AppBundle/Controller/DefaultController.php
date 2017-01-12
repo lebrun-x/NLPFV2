@@ -22,27 +22,6 @@ class DefaultController extends Controller
         return $this->render('index.html.twig', array("projects" => $projects));
     }
 
-
-    /**
-     * best.html
-     * @Route("/best")
-     */
-    public function besthtml()
-    {
-        // replace this example code with whatever you need
-        return $this->render('best.html.twig');
-    }
-
-    /**
-     * participate.html
-     * @Route("/participate")
-     */
-    public function participatehtml()
-    {
-        // replace this example code with whatever you need
-        return $this->render('participate.html.twig');
-    }
-
     /**
      * projet.html
      * @Route("/projet")
