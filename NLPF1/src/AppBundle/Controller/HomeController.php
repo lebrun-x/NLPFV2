@@ -17,8 +17,12 @@ class HomeController extends Controller
  /**
      * @Route("/home")
      */
-    public function homeAction()
+    public function home()
     {
-        return $this->render('index.html');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Project');
+
+        $projects = $repository->findAll();
+
+        return $this->render('index.html.twig', array("projects" => $projects));
     }
 }

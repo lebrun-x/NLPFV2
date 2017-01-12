@@ -1,27 +1,4 @@
-if (socket == undefined)
-    var socket = null;
-
 $(document).ready(function () {
-
-    if (socket == undefined || !socket) {
-        socket = io.connect('http://localhost:8080');
-
-        var session_open = localStorage.getItem("session_open");
-        if (session_open == "true") {
-            var session_id = localStorage.getItem("session_id");
-            sendMessage("newConnection", session_id);
-
-            socket.on("badConnection", function (id) {
-                localStorage.setItem("session_id", id);
-            });
-        }
-        else {
-            socket.on("newConnection", function (id) {
-                localStorage.setItem("session_open", "true");
-                localStorage.setItem("session_id", id);
-            });
-        }
-    }
 
     $("import").each(function () {
         var htmlFile = $(this).attr("src");
@@ -147,6 +124,9 @@ function printfObject2(object) {
         return output;
 }
 
-function sendMessage(myEvent, msg) {
-    socket.emit(myEvent, msg);
+function getInfo(url, callback) {
+    $.get( url , function( data ) {
+        var data_object = JSON.parse(data);
+        callback(data_object);
+    });
 }
