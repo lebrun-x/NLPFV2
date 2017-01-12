@@ -60,13 +60,13 @@ class DefaultController extends Controller
     }
 
     /**
-     * projet.html
+     * contreparties.html
      * @Route("/projet")
      */
     public function projethtml()
     {
         // replace this example code with whatever you need
-        return $this->render('projet.html');
+        return $this->render('contreparties.html');
     }
 
 }

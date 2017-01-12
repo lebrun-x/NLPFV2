@@ -6,6 +6,14 @@ user:
     path: /user
     defaults:   { _controller: AppBundle:Users:AddUser}
 
+project:
+    path: /project
+    defaults:   { _controller: AppBundle:Project:AddProject}
+
+contreparties:
+    path: /contreparties
+    defaults:   { _controller: AppBundle:Contreparties:AddContreparties}
+
 accueil:
     path: /index
     defaults: { _controller: AppBundle:Home:Home}

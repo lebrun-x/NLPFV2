@@ -11,7 +11,9 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,8 +30,8 @@ class UsersController extends Controller
         $formBuilder
             ->add('name',   TextType::class)
             ->add('firstname', TextType::class)
-            ->add('password',   TextType::class)
-            ->add('email', TextType::class)
+            ->add('password',   PasswordType::class)
+            ->add('email', EmailType::class)
             ->add('save',      SubmitType::class)
         ;
 

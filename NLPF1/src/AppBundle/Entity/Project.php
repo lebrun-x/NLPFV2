@@ -176,7 +176,7 @@ class Project
     /**
      * Set amount
      *
-     * @param string $amount
+     * @param int $amount
      *
      * @return Project
      */
@@ -190,7 +190,7 @@ class Project
     /**
      * Get amount
      *
-     * @return string
+     * @return int
      */
     public function getAmount()
     {

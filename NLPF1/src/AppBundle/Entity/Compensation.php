@@ -34,16 +34,16 @@ class Compensation
     private $description;
 
     /**
-     * @ORM\Column(name="amount", type="decimal", scale=2)
+     * @ORM\Column(name="amount", type="integer", scale=2)
      */
     private $amount;
 
-    /**
+   /*/**
      * Many Compensations have One Project.
      * @ORM\ManyToOne(targetEntity="Project")
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */
-    private $ref_project_id;
+    //private $ref_project_id;
 
     /**
      * Get compensationId
@@ -127,27 +127,27 @@ class Compensation
         return $this->amount;
     }
 
-    /**
+    /*/**
      * Set refProjectId
      *
      * @param \AppBundle\Entity\Project $refProjectId
      *
      * @return Compensation
      */
-    public function setRefProjectId(\AppBundle\Entity\Project $refProjectId = null)
+    /*public function setRefProjectId(\AppBundle\Entity\Project $refProjectId = null)
     {
         $this->ref_project_id = $refProjectId;
 
         return $this;
-    }
+    }*/
 
-    /**
+    /*/**
      * Get refProjectId
      *
      * @return \AppBundle\Entity\Project
      */
-    public function getRefProjectId()
+    /*public function getRefProjectId()
     {
         return $this->ref_project_id;
-    }
+    }*/
 }
