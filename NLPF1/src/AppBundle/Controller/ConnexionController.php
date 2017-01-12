@@ -32,14 +32,15 @@ class ConnexionController extends Controller
 
         $qb1->select('u')
             ->from('AppBundle:User', 'u')
-            ->where('u.email = ' . $email . ' AND u.password = ' . $password);
+            ->where('u.email = \'' . $email . '\' AND u.password = \'' . $password . '\'');
+
 
         $query1 = $qb1->getQuery();
 
-        $user = $query1->getResult();
+        $user = $query1->getArrayResult();
 
-        if ($user == null) {
-            $_SESSION["user"] = $user;
+        if (count($user) > 0) {
+            $_SESSION["user"] = $user[0];
 
             $repository = $this->getDoctrine()->getRepository('AppBundle:Project');
 

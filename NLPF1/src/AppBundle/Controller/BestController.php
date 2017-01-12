@@ -24,7 +24,7 @@ class BestController extends Controller
 
         $qb->select('p')
             ->from('AppBundle:Project', 'p')
-            ->orderBy('p.total_amount', 'DESC');
+            ->orderBy('p.amount', 'DESC');
 
         $query = $qb->getQuery();
 
