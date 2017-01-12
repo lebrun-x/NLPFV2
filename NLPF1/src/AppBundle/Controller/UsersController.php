@@ -21,6 +21,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UsersController extends Controller
 {
+    /**
+     * @Route("/user")
+     */
     public function addUserAction(Request $request)
     {
         $user = new User();
@@ -49,7 +52,13 @@ class UsersController extends Controller
 
                 $request->getSession()->getFlashBag()->add('notice', 'Votre compte est bien enregistré.');
 
-                return $this->redirectToRoute('accueil', array('id' => $user->getUserId()));
+                $repository = $this->getDoctrine()->getRepository('AppBundle:Project');
+
+                $projects = $repository->findAll();
+
+                $_SESSION["user"] = $user;
+
+                return $this->render('index.html.twig', array("projects" => $projects));
             }
         }
         return $this->render('user2.html.twig', array('form' => $form->createView(),));

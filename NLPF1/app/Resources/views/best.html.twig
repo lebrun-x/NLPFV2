@@ -15,6 +15,7 @@
 
         <link rel="stylesheet" href="{{ asset('./css/utils.css') }}" />
         <link rel="stylesheet" href="{{ asset('./css/best.css') }}" />
+        <link rel="stylesheet" href="{{ asset('./css/index.css') }}" />
 
 	</head>
 
@@ -37,9 +38,9 @@
                 <div class="panel panel-primary">
                 <div class = "panel-heading"> {{ project.name }} </div>
                 <div class = "panel-body">
-                    <img id="imageproject" src= "{{project.image}}" alt="Image"/>
+                    <img id="imageproject" src= "{{ asset(project.image) }}" alt="Image"/>
                     <div class="gain">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Gain: {{project.total_amount}} € / mois
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Gain: {{project.amount}} € / mois
                     </div>
                     <div class="contact">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Crée le: 12/01/2017<br/>

@@ -26,7 +26,7 @@
                   <li role="presentation" class="active"><a href="/home">Accueil</a></li>
                   <li role="presentation"><a href="/projet">Ajouter</a></li>
                   <li role="presentation"><a href="/best">Les meilleurs projets</a></li>
-                  <li role="presentation"><a href="user.html.twig">S'enregistrer</a></li>
+                  <li role="presentation"><a href="/user">S'enregistrer</a></li>
                   <li role="presentation"><a href="/connexion">Se connecter</a></li>
             </ul>
         </nav>
@@ -38,16 +38,16 @@
                 <div class="panel panel-primary">
                     <div class = "panel-heading"> {{ project.name }} </div>
                     <div class = "panel-body">
-                        <img id="imageproject" src= "{{project.image}}" alt="Image"/>
+                        <img id="imageproject" src= "{{ asset(project.image) }}" alt="Image"/>
                         <div class="gain">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Gain: {{project.total_amount}} € / mois
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Gain: {{project.amount}} € / mois
                         </div>
                         <div class="contact">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Crée le: 12/01/2017<br/>
                         </div>
                         <div class="desctitle"><h4>Description</h4></div>
                         <div class="description"> {{project.description}} </div>
-                        <button class="btn btn-primary" onclick="window.location.href='/project/{{ project.project_id }}'">Participer</button>
+                        <button class="btn btn-primary" onclick="window.location.href='/project/{{ project.projectId }}'">Participer</button>
                     </div>
                 </div>
             {% endfor %}

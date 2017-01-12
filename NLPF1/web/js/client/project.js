@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 		$("#submitCompensation").click(createCompensation);
+		$("#submitProject").click(submit);
 	});
 
     var index = 1;
@@ -37,30 +38,31 @@ $(document).ready(function () {
 		 verifProject();
 	}
 
-	/*function submit()
+	function submit()
 	{
 		var projectName = $('#projectname').val();
 		var projectDesc = $('#projectdesc').val();
 		var projectAuthor = $('#authorname').val();
 		var projectContact = $('#contact').val();
-		var projectImage = "./images/" + $('#projectimage').val();
+		var projectImage = $('#projectimage').val();
 		var date = new Date();
 
 		
-		var myproject = {
-			name : projectName, 
+		var myproject = [
+		{
+			name : projectName,
 			gain : 0, 
 			date : date, 
 			description : projectDesc, 
-			author : projectAuthor, 
+			author : projectAuthor,
 			contact : projectContact,
-            image: projectImage, 
-			compensations : listCompensation
-			};
+            image: projectImage
+		},
+			listCompensation
+			];
 
-		socket.emit('newProject', myproject);
-		 window.location = './index.html';
-	}*/
+		 window.location = '/projet/' + JSON.stringify(myproject);
+	}
 
 	function submitCompensation()
 	{
@@ -238,12 +240,12 @@ $(document).ready(function () {
 	function verifProject()
 	{
 		console.log(projAuthor, projDesc, projName, projContact, index);
-	   if(projAuthor && projDesc && projName && projContact && index >= 1)
+	   if(projAuthor && projDesc && projName && projContact && index > 1)
 	   {
-   			document.getElementById('form_soumettre').disabled = '';
+   			document.getElementById('submitProject').disabled = '';
 	   }
 	   else
 	   {
-	    	document.getElementById('form_soumettre').disabled = 'disabled';
+	    	document.getElementById('submitProject').disabled = 'disabled';
 	   }
 	}

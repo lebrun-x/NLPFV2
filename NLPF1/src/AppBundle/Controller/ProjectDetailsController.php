@@ -28,7 +28,7 @@ class ProjectDetailsController extends Controller
 
         $query1 = $qb1->getQuery();
 
-        $project = $query1->getResult();
+        $project = $query1->getArrayResult();
 
         $qb2 = $em->createQueryBuilder();
 
@@ -41,6 +41,6 @@ class ProjectDetailsController extends Controller
 
         $compensations = $query2->getArrayResult();
 
-        return $this->render('project_details.html.twig', array("project" => $project, "compensations" => $compensations));
+        return $this->render('project_details.html.twig', array("project" => $project[0], "compensations" => $compensations));
     }
 }
