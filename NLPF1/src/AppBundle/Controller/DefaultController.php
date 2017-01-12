@@ -44,16 +44,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * project_details.html
-     * @Route("/project_details")
-     */
-    public function project_detailshtml()
-    {
-        // replace this example code with whatever you need
-        return $this->render('project_details.html.twig');
-    }
-
-    /**
      * projet.html
      * @Route("/projet")
      */
